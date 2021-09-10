@@ -7,7 +7,8 @@ def get_team_members(f = "team-list"):
         for member in team:
             if member.startswith("#"):
                 continue
-            members[member.strip()] = 0
+            name, num = member.split(",")
+            members[name.strip()] = int(num)
     return members
 
 def choose_team(members):
